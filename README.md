@@ -15,4 +15,4 @@ Available features:
 - drag and drop list entry
 - list data is stored in local storage
 
-Link: https://redbulldev.github.io/todo-list-/
+Link: https://redbulldev.github.io/ToDo-List-/
