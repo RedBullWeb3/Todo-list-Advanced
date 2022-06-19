@@ -1,0 +1,351 @@
+:root {
+	--uni-radius: 8px;
+	--main-bg-color: rgb(255, 255, 255);
+	--darker-bg-on-hover: lightgray;
+	--outline-and-border: gray;
+	--font-color: black;
+	--body-color: white;
+}
+
+.dark-mode {
+	--main-bg-color: rgb(40, 40, 40);
+	--darker-bg-on-hover: rgb(92, 92, 92);
+	--outline-and-border: rgba(248, 248, 248, 0.555);
+	--font-color: rgb(231, 231, 231);
+	--body-color: rgb(30, 30, 30);
+}
+
+.light-mode {
+	--main-bg-color: rgb(255, 255, 255);
+	--darker-bg-on-hover: lightgray;
+	--outline-and-border: gray;
+	--font-color: black;
+	--body-color: white;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	border: none;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	background-color: transparent;
+}
+
+body {
+	background-color: var(--body-color);
+	color: var(--font-color);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	> main {
+		flex-basis: 100%;
+		flex-grow: 1;
+		position: relative;
+	}
+}
+
+.main-app-nav {
+	z-index: 5;
+	top: 0;
+	position: sticky;
+	padding: 20px;
+	align-items: center;
+	color: var(--font-color);
+	background-color: var(--main-bg-color);
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	display: flex;
+	gap: 10px;
+	margin-bottom: 20px;
+	div {
+		align-items: center;
+		text-align: center;
+		flex-wrap: wrap;
+		> * {
+			flex: 0 1 100px;
+		}
+		gap: 10px;
+		display: flex;
+		flex: 1 1 10%;
+		label {
+			text-align: center;
+			font-weight: bold;
+			cursor: pointer;
+		}
+		input {
+			padding: 10px;
+			flex: 1 1 0;
+			background-color: transparent;
+			border: 1px var(--font-color) dashed;
+			background-color: var(--main-bg-color);
+			color: var(--font-color);
+			border-radius: var(--uni-radius);
+			&:hover {
+				background-color: var(--darker-bg-on-hover);
+			}
+		}
+	}
+	button {
+		align-items: center;
+		padding: 10px;
+		font-size: 1.2rem;
+		display: flex;
+		gap: 10px;
+		background-color: var(--main-bg-color);
+		color: var(--font-color);
+		border-radius: var(--uni-radius);
+		border: var(--font-color) 1px solid;
+		text-align: center;
+		cursor: pointer;
+		&:hover {
+			color: var(--main-bg-color);
+			background-color: var(--darker-bg-on-hover);
+		}
+		&:active {
+			transform: scale(0.95);
+		}
+	}
+}
+
+.main-lists-container {
+	gap: 10px;
+	padding: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	> * {
+		flex: 1 1 400px;
+	}
+	max-width: 1200px;
+	margin: auto;
+}
+
+.list-container {
+	.list-entry-container {
+		min-height: 60px;
+		height: 100%;
+	}
+	input {
+		&:hover {
+			background-color: var(--darker-bg-on-hover);
+		}
+	}
+	&:hover {
+		.delete-list-button {
+			opacity: 1;
+		}
+	}
+	* {
+		border-radius: var(--uni-radius);
+	}
+	button {
+		color: var(--font-color);
+		cursor: pointer;
+		transition: 0.2s;
+		&:hover {
+			color: var(--main-bg-color);
+			text-shadow: rgba(0, 0, 0, 0.247) 2 2 2px;
+			background-color: var(--darker-bg-on-hover);
+			opacity: 1;
+		}
+	}
+	.delete-list-button {
+		opacity: 0.1;
+		padding: 10px;
+		font-size: 20px;
+		border-radius: var(--uni-radius);
+		transition: 0.2s;
+		&:hover {
+			outline: 1px var(--outline-and-border) solid;
+		}
+	}
+	border: 2px var(--darker-bg-on-hover) solid;
+	background-color: var(--main-bg-color);
+	border-radius: var(--uni-radius);
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	padding: 20px;
+	header {
+		display: flex;
+		gap: 10px;
+		justify-content: flex-start;
+		padding: 10px;
+		align-items: center;
+		word-break: break-all;
+	}
+	.list-nav {
+		padding: 5px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 10px;
+		> * {
+			flex: 1 1 0;
+			border: var(--outline-and-border) 1px solid;
+			padding: 10px;
+			font-size: 1rem;
+		}
+		.add-list-entry {
+			font-weight: bold;
+		}
+		input {
+			color: var(--font-color);
+			min-width: 0;
+			flex-basis: 400px;
+			flex-grow: 100;
+			opacity: 0.6;
+			&:hover {
+				opacity: 1;
+			}
+		}
+		button {
+			border: 0;
+			width: fit-content;
+			flex-grow: 1;
+			flex-basis: 50px;
+			&:hover {
+				outline: 1px var(--outline-and-border) solid;
+			}
+		}
+	}
+}
+
+.list-entry {
+	word-break: break-all;
+	&:only-child {
+		.up-down-container {
+			display: none !important;
+		}
+	}
+	.edit-mode {
+		width: 100%;
+		display: flex;
+		gap: 5px;
+		input {
+			color: var(--font-color);
+			font-size: 1rem;
+			flex-basis: 100%;
+			padding: 0 10px;
+			outline: var(--outline-and-border) 2px dashed;
+		}
+	}
+	.entry-edit-button {
+		&:hover {
+			outline: 1px var(--outline-and-border) solid;
+		}
+	}
+	margin: 5px;
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1px var(--outline-and-border) solid;
+	border-radius: 0;
+	padding-bottom: 5px;
+	&:hover {
+		.list-entry-buttons,
+		.edit-mode-buttons {
+			opacity: 1;
+		}
+	}
+	.list-entry-buttons,
+	.edit-mode-buttons {
+		opacity: 0.1;
+		transition: 0.1s;
+		button {
+			font-size: 20px;
+			padding: 5px 10px;
+			border-radius: var(--uni-radius);
+		}
+		> button {
+			&:hover {
+				outline: 1px var(--outline-and-border) solid;
+			}
+		}
+		display: flex;
+		gap: 5px;
+		.up-down-container {
+			order: 5;
+			&:hover {
+				outline: 1px var(--outline-and-border) solid;
+			}
+			display: flex;
+			flex-direction: column;
+			border-radius: var(--uni-radius);
+			overflow: hidden;
+			button {
+				border-radius: 0;
+			}
+		}
+		.delete-entry-button {
+			&:hover {
+				outline: 1px var(--outline-and-border) solid;
+			}
+		}
+	}
+	.user-entry-text {
+		flex: 1 1 100%;
+	}
+}
+
+.my-typical-footer {
+	background-color: var(--main-bg-color);
+	padding: 10px;
+	bottom: 0;
+	width: 100%;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	h2 {
+		text-align: center;
+		font-size: 1.2rem;
+	}
+	ul {
+		list-style: none;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		a {
+			color: var(--font-color);
+			display: inline-block;
+			padding: 5px 10px;
+			border-radius: var(--uni-radius);
+			transition: transform 0.3s;
+			&:hover {
+				transform: scale(1.05);
+				background-color: var(--darker-bg-on-hover);
+				color: var(--main-bg-color);
+			}
+			margin: 0 5px;
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.main-app-nav {
+		flex-wrap: wrap;
+		> * {
+			flex: 1 1 150px !important;
+		}
+		input,
+		button {
+			padding: 10px 10px !important;
+			flex-basis: 50px !important;
+			white-space: nowrap;
+		}
+		form {
+			> * {
+				flex: 1 1 0 !important;
+			}
+		}
+		.input-div {
+			flex-wrap: wrap;
+			white-space: nowrap;
+		}
+	}
+}
+
+.dragging {
+	border: 2px blue dashed;
+	cursor: grabbing;
+	transform: scale(0.98);
+}

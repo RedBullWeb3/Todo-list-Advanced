@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link
+			rel="apple-touch-icon"
+			sizes="57x57"
+			href="src/favicon/apple-icon-57x57.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="60x60"
+			href="src/favicon/apple-icon-60x60.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="72x72"
+			href="src/favicon/apple-icon-72x72.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="76x76"
+			href="src/favicon/apple-icon-76x76.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="114x114"
+			href="src/favicon/apple-icon-114x114.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="120x120"
+			href="src/favicon/apple-icon-120x120.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="144x144"
+			href="src/favicon/apple-icon-144x144.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="152x152"
+			href="src/favicon/apple-icon-152x152.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="src/favicon/apple-icon-180x180.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="192x192"
+			href="/android-icon-192x192.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="src/favicon/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="96x96"
+			href="src/favicon/favicon-96x96.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="src/favicon/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="/manifest.json" />
+		<meta name="msapplication-TileColor" content="#ffffff" />
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>To do list</title>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+			integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="src/style/css/min/app.min.css" />
+		<script defer src="src/script/drag.js"></script>
+		<script defer src="src/script/misc.js"></script>
+		<script defer src="src/script/modal.js"></script>
+		<script defer src="src/script/listEntry.js"></script>
+		<script defer src="src/script/listNode.js"></script>
+		<script defer src="src/script/app.js"></script>
+		<script defer src="src/script/options.js"></script>
+		<!-- Primary Meta Tags -->
+		<title>To do list</title>
+		<link rel="stylesheet" href="src/style/css/min/modal.min.css" />
+		<meta name="title" content="To do list" />
+		<meta
+			name="description"
+			content="Advanced to do list web app.
+Create multiple to do lists and edit them as you like."
+		/>
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://redbulldev.github.io/todo-list/" />
+		<meta property="og:title" content="To do list" />
+		<meta
+			property="og:description"
+			content="Advanced to do list web app.
+Create multiple to do lists and edit them as you like."
+		/>
+		<meta property="og:image" content="" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta
+			property="twitter:url"
+			content="https://redbulldev.github.io/todo-list/"
+		/>
+		<meta property="twitter:title" content="To do list" />
+		<meta
+			property="twitter:description"
+			content="Advanced to do list web app.
+Create multiple to do lists and edit them as you like."
+		/>
+		<meta property="twitter:image" content="" />
+	</head>
+	<body class="light-mode">
+		<main id="app">
+			<nav class="main-app-nav">
+				<button id="options">
+					<i class="fas fa-cog"></i>
+				</button>
+				<button id="switchTheme">
+					<i class="fas fa-adjust"></i>
+				</button>
+				<button id="addList">
+					<i class="fas fa-plus"></i>
+				</button>
+
+				<div class="input-div">
+					<label for="listName">List name</label>
+					<input id="listName" type="text" placeholder="Enter list name here" />
+					<!-- <button type="reset">Clear</button> -->
+				</div>
+			</nav>
+			<section id="listsContainer" class="main-lists-container"></section>
+		</main>
+		<footer class="my-typical-footer">
+			<h2>To do list by Red Bull Dev</h2>
+			<ul>
+				<li><a href="https://github.com/redbulldev">Github</a></li>
+				<li><a href="https://redbulldev.dev/">Website</a></li>
+				<li>
+					<a href="https://github.com/redbulldev/todo-list">Repo</a>
+				</li>
+			</ul>
+		</footer>
+		<div class="modal-container"></div>
+	</body>
+</html>

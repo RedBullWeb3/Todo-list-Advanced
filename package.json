@@ -1,0 +1,23 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "Advanced to do list web app.\r Create multiple to do lists and edit them as you like.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goodideagiver/todo-list.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/goodideagiver/todo-list/issues"
+  },
+  "homepage": "https://github.com/goodideagiver/todo-list#readme",
+  "dependencies": {
+    "parcel": "^2.3.2"
+  }
+}
